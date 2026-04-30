@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CodeSnap
+
+CodeSnap is a professional tool for creating aesthetic code screenshots with a modern Glassmorphism UI, live syntax highlighting, and instant export workflows.
+
+---
+
+## Overview
+
+| Item | Details |
+| --- | --- |
+| Project Type | Web app (single-page workspace) |
+| Primary Goal | Create beautiful, share-ready code visuals in seconds |
+| Core Experience | Write code on the left, preview stylized output on the right |
+| Output | PNG export + image copy to clipboard |
+
+---
+
+## Features
+
+| Feature | Description |
+| --- | --- |
+| Smart Language Detection | Auto-detects code language on paste (`JavaScript`, `TypeScript`, `Python`) |
+| Focus Mode | Click a line to highlight it while dimming other lines |
+| Animated Background | Optional slow gradient movement for dynamic visuals |
+| Live Typing Animation | Replays erase/type animation directly in preview |
+| Watermarks | Add your handle or brand mark (e.g. `@username`) |
+| Line Numbers | Toggle line numbers and customize their color |
+| Export to PNG | High-quality screenshot export |
+| Copy to Clipboard | Copy generated image directly to system clipboard |
+| Recent Snaps | Keeps the latest snapshot presets/thumbnails in local storage |
+
+---
+
+## Tech Stack
+
+| Technology | Usage |
+| --- | --- |
+| Next.js 14+ (App Router) | Application framework and routing |
+| Tailwind CSS | UI styling and layout |
+| Framer Motion | Animation engine (typing/motion interactions) |
+| Shiki | Syntax highlighting and token rendering |
+| Lucide Icons | Consistent icon set for actions/controls |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1) Install dependencies
+
+```bash
+npm install
+```
+
+### 2) Start development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3) Open in browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start local development server |
+| `npm run build` | Build production bundle |
+| `npm run start` | Start production server |
+| `npm run lint` | Run lint checks |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+| Path | Purpose |
+| --- | --- |
+| `app/ui/CodeSnapApp.tsx` | Main interactive workspace UI |
+| `app/lib/codesnapConfig.ts` | Central typed config and defaults |
+| `app/lib/shikiClient.ts` | Client-side Shiki setup and token rendering |
+| `app/lib/gradients.ts` | Gradient presets |
+| `app/globals.css` | Global styles and animation utilities |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+- The app stores user preferences and recent snaps in `localStorage`.
+- Clipboard/image features depend on browser capabilities and secure context.
+- For best export fidelity, use modern Chromium-based browsers.

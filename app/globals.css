@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #000000;
   --foreground: #171717;
 }
 
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -23,4 +23,47 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes codesnapFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.codesnap-appear {
+  animation: codesnapFadeUp 180ms ease-out both;
+}
+
+@keyframes codesnapGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.codesnap-animated-bg {
+  background-size: 300% 300%;
+  animation: codesnapGradientShift 12s ease-in-out infinite;
+}
+
+/* Shiki output tuning for CodeSnap preview */
+.shiki,
+.shiki code,
+.shiki pre {
+  font-family: inherit !important;
+}
+
+.shiki {
+  background: transparent !important;
 }
