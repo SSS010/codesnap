@@ -1,3 +1,6 @@
+<img width="1904" height="956" alt="image" src="https://github.com/user-attachments/assets/6b4213f8-59df-4db9-882e-d7d5a7b2adc4" />
+
+
 # CodeSnap
 
 CodeSnap is a professional tool for creating aesthetic code screenshots with a modern Glassmorphism UI, live syntax highlighting, and instant export workflows.
